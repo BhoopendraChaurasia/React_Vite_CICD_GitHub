@@ -6,11 +6,12 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
 import ContactUs from './pages/ContactUs'
-import { Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <>
+      <Router>
       <Header />
           <Routes>
             <Route path="/" element={<Home />}></Route>
@@ -19,6 +20,7 @@ function App() {
             <Route path="/contact" element={<ContactUs />}></Route >
           </Routes>
       <Footer />
+      </Router>
     </>
   )
 }

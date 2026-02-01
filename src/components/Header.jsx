@@ -10,9 +10,9 @@ export default function Header() {
 
     const links = [
         { path: '/', title: "Home" }, 
-        { path: '/about', title: "About"}, 
-        {path: '/services', title: "Projects"}, 
-        {path: '/contact', title: "Contact"}
+        { path: '/about', title: "About" }, 
+        { path: '/services', title: "Services" }, 
+        { path: '/contact', title: "Contact" }
     ];
 
     return (
