@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <h1>React development</h1>
+      <h1>React developmentfgdfsgsdfgfs</h1>
     </>
   )
 }
