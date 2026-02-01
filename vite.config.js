@@ -3,7 +3,10 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
   base: "/React_Vite_CICD_GitHub/",
   server: {
     port: 3001,
