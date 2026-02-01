@@ -1,7 +1,19 @@
+
 import { useState } from "react";
+import { Link } from 'react-router-dom'
+import { FiMenu } from "react-icons/fi";
+
 
 export default function Header() {
     const [open, setOpen] = useState(false);
+
+
+    const links = [
+        { path: '/', title: "Home" }, 
+        { path: '/about', title: "About"}, 
+        {path: '/services', title: "Projects"}, 
+        {path: '/contact', title: "Contact"}
+    ];
 
     return (
         <header className="sticky top-0 z-50 backdrop-blur bg-white/70 border-b border-white/20 shadow-sm">
@@ -14,16 +26,16 @@ export default function Header() {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8 font-medium">
-                    {["Home", "About", "Projects", "Contact"].map((item) => (
-                        <a
-                            key={item}
-                            href={`#${item.toLowerCase()}`}
+                    {links.map((item, index) => (
+                        <Link
+                            key={index}
+                            to={item.path}
                             className="relative text-gray-700 hover:text-indigo-600 transition
               after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0
               after:bg-indigo-500 after:transition-all hover:after:w-full"
                         >
-                            {item}
-                        </a>
+                            {item.title}
+                        </Link>
                     ))}
                 </nav>
 
@@ -37,22 +49,22 @@ export default function Header() {
                     className="md:hidden text-gray-700 text-2xl"
                     onClick={() => setOpen(!open)}
                 >
-                    ☰
+                    <FiMenu />
                 </button>
             </div>
 
             {/* Mobile Menu */}
             {open && (
                 <div className="md:hidden px-6 pb-6 space-y-4 bg-white/90 backdrop-blur">
-                    {["Home", "About", "Projects", "Contact"].map((item) => (
-                        <a
-                            key={item}
-                            href={`#${item.toLowerCase()}`}
+                    {links.map((item, index) => (
+                        <Link
+                            key={index}
+                            to={item.path}
                             className="block text-gray-700 font-medium hover:text-indigo-600"
                             onClick={() => setOpen(false)}
                         >
-                            {item}
-                        </a>
+                            {item.title}
+                        </Link>
                     ))}
                     <button className="w-full mt-2 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-semibold">
                         Hire Me

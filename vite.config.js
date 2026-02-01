@@ -8,7 +8,6 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: "/React_Vite_CICD_GitHub/",
   server: {
     port: 3001,
     open: true,
